@@ -1,6 +1,6 @@
 package com.firstproject;
 
-// NEW 
+// ! NEW 
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
