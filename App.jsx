@@ -1,8 +1,13 @@
-import React from 'react';
-import {Text} from 'react-native';
+import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import Router from './src/router';
 
-const App = () => {
-  return <Text>Hello World! 567</Text>;
-};
+function App() {
+  return (
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
+  );
+}
 
 export default App;

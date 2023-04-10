@@ -1,0 +1,17 @@
+import {View, Text} from 'react-native';
+import React from 'react';
+import Menu from './src/Screen/Menu';
+import Home from './src/Screen/Home';
+import SplashScreen from './src/Splash/index';
+
+const App2 = () => {
+  return (
+    <View>
+      <SplashScreen />
+      <Home />
+      <Menu />
+    </View>
+  );
+};
+
+export default App2;
