@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   // default-styling for all screens
   container: {
     width: '100%',
-    height: '100%',
+    flex: 1,
     padding: 20,
     backgroundColor: '#fff',
   },
@@ -104,6 +104,32 @@ const styles = StyleSheet.create({
     fontSize: SIZES.medium,
     fontWeight: 'bold',
     color: COLORS.secondary,
+  },
+  popularPodcastList: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  popularPodcastListImageContainer: {
+    backgroundColor: 'salmon',
+    height: 200,
+    borderRadius: 20,
+    marginRight: 10,
+    position: 'relative',
+    overflow: 'hidden',
+    // backgroundColor: COLORS.white,
+    backgroundColor: '#FE6F5D',
+  },
+  popularPodcastListDesc: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderBottomStartRadius: 20,
+    borderBottomEndRadius: 20,
+    // create background blur
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   //  end__popular-podcast
 });

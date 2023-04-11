@@ -86,20 +86,26 @@ const Home = () => {
         {/* end__heading-podcast */}
 
         {/* podcast-list */}
-        <ScrollView horizontal={true}>
-          <FlatList
-            data={popularPodcast}
-            renderItem={({item}) => (
-              <TouchableOpacity>
-                <View>
-                  <Image source={item.image} alt={item.title} />
-                </View>
+        <FlatList
+          data={popularPodcast}
+          contentContainerStyle={styles.popularPodcastList}
+          horizontal={true}
+          renderItem={({item}) => (
+            <TouchableOpacity>
+              <View style={styles.popularPodcastListImageContainer}>
+                <Image
+                  source={item.image}
+                  alt={item.title}
+                  style={{height: '100%'}}
+                />
+              </View>
+              <View style={styles.popularPodcastListDesc}>
                 <Text>{item.title}</Text>
                 <Text>{item.studio}</Text>
-              </TouchableOpacity>
-            )}
-          />
-        </ScrollView>
+              </View>
+            </TouchableOpacity>
+          )}
+        />
       </View>
       {/* END__POPULAR PODCAST */}
     </ScrollView>
