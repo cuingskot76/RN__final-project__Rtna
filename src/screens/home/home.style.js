@@ -3,10 +3,22 @@ import {COLORS, FONT, SIZES} from '../../constants';
 const {StyleSheet} = require('react-native');
 
 const styles = StyleSheet.create({
+  // default-styling for all screens
   container: {
     width: '100%',
+    height: '100%',
     padding: 20,
+    backgroundColor: '#fff',
   },
+  containerWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  //   end__default-styling for all screens
+
+  //   user-details
   userContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -39,11 +51,61 @@ const styles = StyleSheet.create({
     borderColor: COLORS.gray2,
     borderWidth: 1,
     overflow: 'hidden',
-    // backgroundColor: 'salmon',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
+  //   end__user-details
+
+  headingTitleContainer: {
+    marginVertical: 30,
+  },
+  headingTitle: {
+    fontFamily: FONT.bold,
+    fontSize: SIZES.xLarge,
+    color: COLORS.primary,
+    fontWeight: 'bold',
+  },
+
+  //   search
+  searchContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  searchInput: {
+    fontFamily: FONT.regular,
+    paddingHorizontal: SIZES.medium,
+    backgroundColor: COLORS.white,
+    borderRadius: SIZES.normal,
+    height: 50,
+    width: '80%',
+    fontSize: SIZES.normal,
+  },
+  searchIcon: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.tertiary,
+    borderRadius: SIZES.normal,
+  },
+  //   end__search
+
+  //   popular-podcast
+  popularPodcastHeading: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  popularPodcastTitle: {
+    fontSize: SIZES.medium,
+    fontWeight: 'bold',
+    color: COLORS.secondary,
+  },
+  //  end__popular-podcast
 });
 
 export default styles;
