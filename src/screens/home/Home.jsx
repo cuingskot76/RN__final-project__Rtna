@@ -14,6 +14,7 @@ import styles from './home.style';
 import {NotificationIcon, SearchIcon} from '../../../public/assets/icons';
 import {popularPodcast} from '../../constants';
 
+import {BlurView} from '@react-native-community/blur';
 const Home = () => {
   // state untuk inputan pada text input
   const [input, setInput] = useState('');
@@ -99,9 +100,17 @@ const Home = () => {
                   style={{height: '100%'}}
                 />
               </View>
-              <View style={styles.popularPodcastListDesc}>
-                <Text>{item.title}</Text>
-                <Text>{item.studio}</Text>
+              <View style={styles.popularPodcastListDescContainer}>
+                <BlurView blurType="light">
+                  <View>
+                    <Text style={styles.popularPodcastListTitle}>
+                      {item.title}
+                    </Text>
+                    <Text style={styles.popularPodcastListStudio}>
+                      {item.studio}
+                    </Text>
+                  </View>
+                </BlurView>
               </View>
             </TouchableOpacity>
           )}

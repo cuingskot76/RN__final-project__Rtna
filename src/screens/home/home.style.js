@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.tertiary,
+    // backgroundColor: 'lightblue',
     borderRadius: SIZES.normal,
   },
   //   end__search
@@ -116,10 +117,12 @@ const styles = StyleSheet.create({
     marginRight: 10,
     position: 'relative',
     overflow: 'hidden',
-    // backgroundColor: COLORS.white,
-    backgroundColor: '#FE6F5D',
+    marginTop: 15,
+    backgroundColor: COLORS.gray2,
+    // backgroundColor: '#FE6F5D',
+    // backgroundColor: 'salmon',
   },
-  popularPodcastListDesc: {
+  popularPodcastListDescContainer: {
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -128,8 +131,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderBottomStartRadius: 20,
     borderBottomEndRadius: 20,
-    // create background blur
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(255,255,255,0.5)',
+  },
+  popularPodcastListTitle: {
+    fontWeight: 'bold',
+    color: COLORS.primary,
+    fontSize: SIZES.normal,
+    marginBottom: 5,
+  },
+  popularPodcastListStudio: {
+    color: COLORS.secondary,
+    fontSize: SIZES.small,
+    fontWeight: '500',
   },
   //  end__popular-podcast
 });
