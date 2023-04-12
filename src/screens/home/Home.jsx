@@ -11,10 +11,16 @@ import React, {useState} from 'react';
 
 import userProfile from '../../../public/assets/images/aku.jpg';
 import styles from './home.style';
-import {NotificationIcon, SearchIcon} from '../../../public/assets/icons';
-import {popularPodcast} from '../../constants';
+import {
+  NotificationIcon,
+  PlayIcon,
+  SearchIcon,
+} from '../../../public/assets/icons';
+import {popularPodcast, trendingPodcast} from '../../constants';
 
+// import library tambahan untuk membuat efek blur di background
 import {BlurView} from '@react-native-community/blur';
+
 const Home = () => {
   // state untuk inputan pada text input
   const [input, setInput] = useState('');
@@ -64,7 +70,9 @@ const Home = () => {
       {/* search */}
       <View style={styles.searchContainer}>
         <TextInput
+          // value = untuk menampilkan inputan dari state input
           value={input}
+          // onChangeText = untuk menghandle inputan dari text input
           onChangeText={onHandleClick}
           placeholder="Search podcast"
           style={styles.searchInput}
@@ -76,7 +84,7 @@ const Home = () => {
       {/* end__search */}
 
       {/* POPULAR PODCAST */}
-      <View style={styles.popularPodcastContainer}>
+      <View>
         {/* heading-podcast */}
         <View style={styles.popularPodcastHeading}>
           <Text style={styles.popularPodcastTitle}>Popular Podcast</Text>
@@ -88,19 +96,26 @@ const Home = () => {
 
         {/* podcast-list */}
         <FlatList
+          // data = data yang akan di tampilkan
           data={popularPodcast}
+          // contentContainerStyle = style untuk container dari flatlist
           contentContainerStyle={styles.popularPodcastList}
+          // horizontal = untuk menampilkan data secara horizontal
           horizontal={true}
+          // renderItem = untuk menampilkan data, untuk nama "item" bisa di ganti/ bebas
           renderItem={({item}) => (
             <TouchableOpacity>
               <View style={styles.popularPodcastListImageContainer}>
                 <Image
+                  // source = untuk menampilkan gambar/ data dari image
                   source={item.image}
+                  // alt = untuk menampilkan text ketika gambar tidak muncul
                   alt={item.title}
                   style={{height: '100%'}}
                 />
               </View>
               <View style={styles.popularPodcastListDescContainer}>
+                {/* BlurView = pake library tambahan, untuk membuat efek blur di background */}
                 <BlurView blurType="light">
                   <View>
                     <Text style={styles.popularPodcastListTitle}>
@@ -117,6 +132,50 @@ const Home = () => {
         />
       </View>
       {/* END__POPULAR PODCAST */}
+
+      {/* TRENDING PODCAST */}
+      <View>
+        {/* heading-podcast */}
+        <View style={styles.trendingPodcastHeading}>
+          <Text style={styles.trendingPodcastTitle}>Trending Podcast</Text>
+          <TouchableOpacity>
+            <Text>View all</Text>
+          </TouchableOpacity>
+        </View>
+        {/* end__heading-podcast */}
+
+        {/* podcast-list */}
+        <FlatList
+          data={trendingPodcast}
+          renderItem={({item}) => (
+            <TouchableOpacity>
+              <View style={styles.trendingPodcastListContent}>
+                <View style={styles.trendingPodcastListImageContainer}>
+                  <Image
+                    source={item.image}
+                    alt={item.title}
+                    style={{height: '100%', width: '100%', borderRadius: 20}}
+                  />
+                </View>
+                <View style={styles.trendingPodcastListDescContainer}>
+                  <View>
+                    <Text style={styles.trendingPodcastListTitle}>
+                      {item.title}
+                    </Text>
+                    <Text style={styles.trendingPodcastListStudio}>
+                      {item.studio}
+                    </Text>
+                  </View>
+                  <TouchableOpacity style={styles.playIcon}>
+                    <PlayIcon />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
+      {/* END__TRENDING PODCAST */}
     </ScrollView>
   );
 };
