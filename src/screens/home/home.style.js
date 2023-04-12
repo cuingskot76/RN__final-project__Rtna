@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   popularPodcastTitle: {
     fontSize: SIZES.medium,
     fontWeight: 'bold',
-    color: COLORS.secondary,
+    color: COLORS.primary,
   },
   popularPodcastList: {
     display: 'flex',
@@ -119,8 +119,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginTop: 15,
     backgroundColor: COLORS.gray2,
-    // backgroundColor: '#FE6F5D',
-    // backgroundColor: 'salmon',
   },
   popularPodcastListDescContainer: {
     position: 'absolute',
@@ -145,6 +143,63 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   //  end__popular-podcast
+
+  //   trending-podcast
+  trendingPodcastHeading: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  trendingPodcastTitle: {
+    fontSize: SIZES.medium,
+    fontWeight: 'bold',
+    color: COLORS.primary,
+  },
+  trendingPodcastListContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  trendingPodcastListImageContainer: {
+    height: 100,
+    width: 100,
+    borderRadius: 20,
+    marginRight: 20,
+    marginTop: 10,
+    backgroundColor: '#eee',
+  },
+  trendingPodcastListDescContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '65%',
+  },
+  trendingPodcastListTitle: {
+    fontWeight: 'bold',
+    color: COLORS.secondary,
+    fontSize: SIZES.normal,
+    marginBottom: 5,
+  },
+  trendingPodcastListStudio: {
+    color: COLORS.secondary,
+    fontSize: SIZES.small,
+    fontWeight: '500',
+  },
+  playIcon: {
+    width: 45,
+    height: 45,
+    borderRadius: 50,
+    backgroundColor: COLORS.white,
+    overflow: 'hidden',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  //   end__trending-podcast
 });
 
 export default styles;
