@@ -119,8 +119,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginTop: 15,
     backgroundColor: COLORS.gray2,
-    // backgroundColor: '#FE6F5D',
-    // backgroundColor: 'salmon',
   },
   popularPodcastListDescContainer: {
     position: 'absolute',
@@ -163,7 +161,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    // marginBottom: 10,
     marginTop: 5,
   },
   trendingPodcastListImageContainer: {

@@ -147,6 +147,8 @@ const Home = () => {
         {/* podcast-list */}
         <FlatList
           data={trendingPodcast}
+          // scrollEnabled = untuk mengaktifkan scroll pada flatlist, karena disini saya pake scrollview maka saya matikan. jika tidak di matikan maka akan ada warning
+          scrollEnabled={false}
           renderItem={({item}) => (
             <TouchableOpacity>
               <View style={styles.trendingPodcastListContent}>
