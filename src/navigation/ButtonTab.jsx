@@ -10,7 +10,6 @@ function ButtonTab({state, descriptors, navigation}) {
   return (
     <View style={{flexDirection: 'row'}}>
       {state.routes.map((route, index) => {
-        console.log(index);
         const {options} = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
