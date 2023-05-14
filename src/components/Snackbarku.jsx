@@ -1,8 +1,8 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import Snackbar from 'react-native-snackbar';
 
-const SnackBar = () => {
+const Snackbarku = () => {
   Snackbar.show({
     text: 'Ini notifikasi ya :)',
     duration: Snackbar.LENGTH_SHORT,
@@ -11,4 +11,4 @@ const SnackBar = () => {
   return <View></View>;
 };
 
-export default SnackBar;
+export default Snackbarku;

@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import SnackBar from '../../components/SnackBar';
 import Modalku from '../../components/Modalku';
+import Snackbarku from '../../components/Snackbarku';
 
 const Notification = () => {
   return (
@@ -9,7 +9,7 @@ const Notification = () => {
       <Text>Notification</Text>
       <TouchableOpacity>
         {/* komponen snackbar dipanggil disini  */}
-        <SnackBar />
+        <Snackbarku />
       </TouchableOpacity>
 
       {/* komponen modal dipanggil disini */}
