@@ -4,8 +4,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/home/Home';
 import ButtonTab from '../navigation/ButtonTab';
 import Search from '../screens/search/Search';
-import Notification from '../screens/notification/notification';
 import Profile from '../screens/profile/Profile';
+import Notification from '../screens/notification/Notification';
 
 // Stack = buat navigasi antar screen
 const Stack = createNativeStackNavigator();

@@ -8,11 +8,7 @@ const SnackBar = () => {
     duration: Snackbar.LENGTH_SHORT,
   });
 
-  return (
-    <View>
-      <Text>SnackBar</Text>
-    </View>
-  );
+  return <View></View>;
 };
 
 export default SnackBar;

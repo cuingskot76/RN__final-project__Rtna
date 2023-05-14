@@ -1,14 +1,19 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import SnackBar from '../../components/Snackbar';
+import SnackBar from '../../components/SnackBar';
+import Modalku from '../../components/Modalku';
 
 const Notification = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
+      <Text>Notification</Text>
       <TouchableOpacity>
-        <Text>Notification</Text>
+        {/* komponen snackbar dipanggil disini  */}
         <SnackBar />
       </TouchableOpacity>
+
+      {/* komponen modal dipanggil disini */}
+      <Modalku />
     </View>
   );
 };

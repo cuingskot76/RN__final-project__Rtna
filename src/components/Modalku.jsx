@@ -1,46 +1,42 @@
-// import React, {useEffect} from 'react';
-// import {
-//   View,
-//   StyleSheet,
-//   Image,
-//   StatusBar,
-//   Text,
-//   TouchableOpacity,
-// } from 'react-native';
-// import {useNavigation} from '@react-navigation/native';
-// import Modal from 'react-native-snackbar';
-// const Modalku = () => {
-//   const [modal, setModal] = useState(false);
+import React, {useState} from 'react';
+import {Button, Text, View} from 'react-native';
+import Modal from 'react-native-modal';
 
-//   return (
-//     <View>
-//       <TouchableOpacity onPress={() => setModal(true)}>
-//         <Text>Buka Modal</Text>
-//       </TouchableOpacity>
-//       <Modal
-//         style={{margin: 10, justifyContent: 'flex-end'}}
-//         isVisible={modal}
-//         onBackdropPress={() => setModal(false)}
-//         animation="fadeInUp"
-//         animationTiming={2000}
-//         animationOut="fadeOut"
-//         animationOutTiming={2000}>
-//         <View
-//           style={{
-//             height: 400,
-//             backgroundColor: '#FFFF',
-//             borderRadius: 10,
-//             justifyContent: 'center',
-//             alignItems: 'center',
-//           }}>
-//           <Text>I am the modal content</Text>
-//           <ToucableOpacity onPress={() => setModal(false)}>
-//             <Text>Tutup Modal</Text>
-//           </ToucableOpacity>
-//         </View>
-//       </Modal>
-//     </View>
-//   );
-// };
+function Modalku() {
+  const [isModalVisible, setModalVisible] = useState(false);
 
-// export default Modalku;
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  return (
+    <View style={{flex: 1, marginVertical: 20}}>
+      <Button title="Show modal" onPress={toggleModal} />
+
+      <Modal
+        isVisible={isModalVisible}
+        onBackdropPress={() => setModalVisible(false)}
+        animationIn={'slideInLeft'}
+        animationOut={'slideOutRight'}
+        animationInTiming={1000}
+        animationOutTiming={1000}>
+        <View>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              height: 400,
+              backgroundColor: 'white',
+            }}>
+            Hello!
+          </Text>
+
+          <Button title="Hide modal" onPress={toggleModal} />
+        </View>
+      </Modal>
+    </View>
+  );
+}
+
+export default Modalku;
