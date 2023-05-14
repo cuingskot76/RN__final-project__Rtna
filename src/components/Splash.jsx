@@ -3,8 +3,6 @@ import React, {useEffect} from 'react';
 import {View, StyleSheet, Image, StatusBar} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import PodcastBanner from '../../public/assets/images/podcast.png';
-
 const Splash = () => {
   const navigation = useNavigation();
 
@@ -19,7 +17,11 @@ const Splash = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={PodcastBanner} alt="podcast-banner" />
+      <Image
+        // nambahin gambar disini
+        source={require('../../public/assets/images/podcast.png')}
+        alt="splash-screen-image"
+      />
     </View>
   );
 };

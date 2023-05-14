@@ -3,9 +3,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/home/Home';
 import ButtonTab from '../navigation/ButtonTab';
-import Search from '../screens/search/Search';
 import Profile from '../screens/profile/Profile';
 import Notification from '../screens/notification/Notification';
+import Keep from '../screens/keep/Keep';
+import Splash from '../components/Splash';
 
 // Stack = buat navigasi antar screen
 const Stack = createNativeStackNavigator();
@@ -20,11 +21,7 @@ const ButtonTabs = () => {
     <Tab.Navigator tabBar={props => <ButtonTab {...props} />}>
       {/* headerShown = buat menghilangkan nama Tab'nya  */}
       <Tab.Screen name="Home" options={{headerShown: false}} component={Home} />
-      <Tab.Screen
-        name="Keep"
-        options={{headerShown: false}}
-        component={Search}
-      />
+      <Tab.Screen name="Keep" options={{headerShown: false}} component={Keep} />
       <Tab.Screen
         name="Notification"
         options={{headerShown: false}}
@@ -51,11 +48,17 @@ const Router = () => {
     // initialRouteName = screen pertama yang akan di tampilkan
     // harus sama dengan nama screen yang ada di <Stack.Screen />
     // "headerShown = false" = untuk menghilangkan header
-    <Stack.Navigator initialRouteName="Main">
+    <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
         name="Main"
         options={{headerShown: false}}
         component={ButtonTabs}
+      />
+      {/* splash screen */}
+      <Stack.Screen
+        name="Splash"
+        options={{headerShown: false}}
+        component={Splash}
       />
     </Stack.Navigator>
   );
