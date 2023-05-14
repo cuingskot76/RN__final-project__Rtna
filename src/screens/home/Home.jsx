@@ -16,7 +16,13 @@ import {
   PlayIcon,
   SearchIcon,
 } from '../../../public/assets/icons';
-import {popularPodcast, trendingPodcast} from '../../constants';
+import {
+  COLORS,
+  FONT,
+  SIZES,
+  popularPodcast,
+  trendingPodcast,
+} from '../../constants';
 
 // import library tambahan untuk membuat efek blur di background
 import {BlurView} from '@react-native-community/blur';
@@ -68,16 +74,36 @@ const Home = () => {
       {/* end__heading */}
 
       {/* search */}
-      <View style={styles.searchContainer}>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
         <TextInput
           // value = untuk menampilkan inputan dari state input
           value={input}
           // onChangeText = untuk menghandle inputan dari text input
           onChangeText={onHandleClick}
           placeholder="Search podcast"
-          style={styles.searchInput}
+          style={{
+            paddingHorizontal: 18,
+            backgroundColor: '#F3F4F8',
+            borderRadius: 16,
+            height: 50,
+            width: '80%',
+            fontSize: 16,
+          }}
         />
-        <TouchableOpacity style={styles.searchIcon}>
+        <TouchableOpacity
+          style={{
+            width: 50,
+            height: 50,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#FF7754',
+            borderRadius: 16,
+          }}>
           <SearchIcon />
         </TouchableOpacity>
       </View>
