@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/home/Home';
 import ButtonTab from '../navigation/ButtonTab';
 import Search from '../screens/search/Search';
-import Notification from '../screens/notification/Notification';
+import Notification from '../screens/notification/notification';
 import Profile from '../screens/profile/Profile';
 
 // Stack = buat navigasi antar screen
@@ -21,7 +21,7 @@ const ButtonTabs = () => {
       {/* headerShown = buat menghilangkan nama Tab'nya  */}
       <Tab.Screen name="Home" options={{headerShown: false}} component={Home} />
       <Tab.Screen
-        name="Search"
+        name="Keep"
         options={{headerShown: false}}
         component={Search}
       />

@@ -1,7 +1,6 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import Snackbar from 'react-native-snackbar';
-import SnackBar from '../../components/SnackBar';
+import SnackBar from '../../components/Snackbar';
 
 const Notification = () => {
   return (
