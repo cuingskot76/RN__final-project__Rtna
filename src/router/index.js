@@ -29,6 +29,13 @@ const ButtonTabs = () => {
         name="Notification"
         options={{headerShown: false}}
         component={Notification}
+        // passing parameter ke screen Notification
+        listeners={({navigation}) => ({
+          tabPress: event => {
+            event.preventDefault();
+            navigation.navigate('Notification', {name: 'Notification'});
+          },
+        })}
       />
       <Tab.Screen
         name="Profile"
