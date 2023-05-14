@@ -21,7 +21,7 @@ const ButtonTabs = () => {
       {/* headerShown = buat menghilangkan nama Tab'nya  */}
       <Tab.Screen name="Home" options={{headerShown: false}} component={Home} />
       <Tab.Screen
-        name="Search"
+        name="Keep"
         options={{headerShown: false}}
         component={Search}
       />

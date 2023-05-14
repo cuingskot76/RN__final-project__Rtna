@@ -5,6 +5,7 @@ import {
   ProfileIcon,
   SearchIcon,
 } from '../../public/assets/tab_icons';
+import {KeepIcon} from '../../public/assets/icons';
 
 function ButtonTab({state, descriptors, navigation}) {
   return (
@@ -60,8 +61,8 @@ function ButtonTab({state, descriptors, navigation}) {
             {/* ini buat icon, disini menggunakan TERNARY OPERATOR. Bisa pake if else */}
             {route.name === 'Home' ? (
               <HomeIcon />
-            ) : route.name === 'Search' ? (
-              <SearchIcon />
+            ) : route.name === 'Keep' ? (
+              <KeepIcon />
             ) : route.name === 'Notification' ? (
               <NotificationIcon />
             ) : route.name === 'Profile' ? (
