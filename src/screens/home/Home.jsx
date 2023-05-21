@@ -27,7 +27,7 @@ import {
 // import library tambahan untuk membuat efek blur di background
 import {BlurView} from '@react-native-community/blur';
 
-const Home = () => {
+const Home = ({navigation}) => {
   // state untuk inputan pada text input
   const [input, setInput] = useState('');
 
@@ -58,7 +58,9 @@ const Home = () => {
 
         {/* notification */}
         <View>
-          <TouchableOpacity style={styles.bellContainer}>
+          <TouchableOpacity
+            style={styles.bellContainer}
+            onPress={() => navigation.navigate('DetailsNotification')}>
             {/* notification=-icon */}
             <NotificationIcon />
           </TouchableOpacity>
