@@ -7,6 +7,7 @@ import Profile from '../screens/profile/Profile';
 import Notification from '../screens/notification/Notification';
 import Keep from '../screens/keep/Keep';
 import Splash from '../components/Splash';
+import DetailsNotification from '../components/DetailsNotification';
 
 // Stack = buat navigasi antar screen
 const Stack = createNativeStackNavigator();
@@ -27,9 +28,11 @@ const ButtonTabs = () => {
         options={{headerShown: false}}
         component={Notification}
         // passing parameter ke screen Notification
+        // listener = buat mengarahkan ke screen Notification
+        // tabPress = buat mengarahkan ke screen Notification
         listeners={({navigation}) => ({
           tabPress: event => {
-            event.preventDefault();
+            // event.preventDefault();
             navigation.navigate('Notification', {name: 'Notification'});
           },
         })}
@@ -59,6 +62,12 @@ const Router = () => {
         name="Splash"
         options={{headerShown: false}}
         component={Splash}
+      />
+      {/* screen notification */}
+      <Stack.Screen
+        name="DetailsNotification"
+        options={{headerShown: false}}
+        component={DetailsNotification}
       />
     </Stack.Navigator>
   );
