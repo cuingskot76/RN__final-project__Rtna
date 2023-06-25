@@ -1,19 +1,38 @@
 import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SearchIcon} from '../../../public/assets/icons';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const Keep = () => {
   // state untuk inputan pada text input
   const [input, setInput] = useState('');
+  const [horrorFavorite, setHorrorFavorite] = useState(null);
 
   // fungsi untuk menghandle inputan pada text input
   const onHandleClick = e => {
     // meng-set inputan ke state input
     setInput(e);
   };
+
+  useEffect(() => {
+    const getHorrorFavorite = async () => {
+      try {
+        // ambil data dari async storage dengan key "horrorFavorite"
+        const storedItems = await AsyncStorage.getItem('horrorFavorite');
+        // jika ada data horrorFavorite di async storage, maka parse data horrorFavorite menjadi array dan simpan ke state horrorFavorite
+        const favorites = storedItems ? JSON.parse(storedItems) : [];
+        // simpan data horrorFavorite ke state horrorFavorite
+        setHorrorFavorite(favorites);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getHorrorFavorite();
+  }, []);
 
   return (
     <View
@@ -52,13 +71,15 @@ const Keep = () => {
           <SearchIcon />
         </TouchableOpacity>
       </View>
-      {/* 
-      <View>
-        {
-          // menampilkan data dari state datas
-          datas.map(data => (
+
+      {/* Favorite */}
+      <View style={{marginTop: 20}}>
+        <Text style={{fontSize: 18, fontWeight: 'bold'}}>Favorite</Text>
+
+        {horrorFavorite ? (
+          horrorFavorite?.map((item, index) => (
             <TouchableOpacity
-              key={data.id}
+              key={item.id}
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -67,14 +88,14 @@ const Keep = () => {
               }}>
               <View>
                 <Image
-                  source={{uri: data.img}}
+                  source={{uri: item.image}}
                   style={{
                     width: 60,
                     height: 60,
                     borderRadius: 10,
                     resizeMode: 'cover',
                   }}
-                  alt={`${data.title} image`}
+                  alt={`${item.title} image`}
                 />
               </View>
               <View
@@ -86,10 +107,10 @@ const Keep = () => {
                 }}>
                 <View>
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    {data.title}
+                    {item.title}
                   </Text>
                   <Text style={{fontSize: 14, color: '#9FA5C0'}}>
-                    {data.time}
+                    {item.time}
                   </Text>
                 </View>
                 <View
@@ -107,8 +128,11 @@ const Keep = () => {
               </View>
             </TouchableOpacity>
           ))
-        }
-      </View> */}
+        ) : (
+          <Text>Belum ada podcast yang di favorite</Text>
+        )}
+      </View>
+      {/* end__Favorite */}
     </View>
   );
 };
