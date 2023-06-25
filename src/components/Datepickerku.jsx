@@ -6,7 +6,6 @@ const Datepickerku = () => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
-  console.log(date);
   return (
     <View style={{flex: 1}}>
       <Button title="Show Datepicker" onPress={() => setOpen(true)} />
