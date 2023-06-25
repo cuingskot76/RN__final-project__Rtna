@@ -200,6 +200,54 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   //   end__trending-podcast
+
+  // horror-podcast
+  horrorPodcastHeading: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  horrorPodcastTitle: {
+    fontSize: SIZES.medium,
+    fontWeight: 'bold',
+    color: COLORS.primary,
+  },
+  horrorPodcastListContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+  },
+  horrorPodcastListImageContainer: {
+    height: 100,
+    width: 100,
+    borderRadius: 20,
+    marginRight: 20,
+    marginTop: 10,
+    backgroundColor: '#eee',
+  },
+  horrorPodcastListDescContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '65%',
+  },
+  horrorPodcastListTitle: {
+    fontWeight: '500',
+    color: COLORS.secondary,
+    fontSize: SIZES.normal,
+    marginBottom: 5,
+  },
+  horrorPodcastListStudio: {
+    color: COLORS.secondary,
+    fontSize: SIZES.small,
+    fontWeight: '500',
+  },
+
+  // end__horror-podcast
 });
 
 export default styles;

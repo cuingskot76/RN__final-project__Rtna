@@ -20,12 +20,15 @@ import {
   COLORS,
   FONT,
   SIZES,
+  horrorPodcast,
   popularPodcast,
   trendingPodcast,
 } from '../../constants';
 
 // import library tambahan untuk membuat efek blur di background
 import {BlurView} from '@react-native-community/blur';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Home = ({navigation}) => {
   // state untuk inputan pada text input
@@ -206,6 +209,57 @@ const Home = ({navigation}) => {
         />
       </View>
       {/* END__TRENDING PODCAST */}
+
+      {/* HORROR PODCAST */}
+      <View>
+        {/* heading-podcast */}
+        <View style={styles.horrorPodcastHeading}>
+          <Text style={styles.horrorPodcastTitle}>Horror Podcast</Text>
+          <TouchableOpacity>
+            <Text>View all</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* podcast-list */}
+        <FlatList
+          data={horrorPodcast}
+          // scrollEnabled = untuk mengaktifkan scroll pada flatlist, karena disini saya pake scrollview maka saya matikan. jika tidak di matikan maka akan ada warning
+          scrollEnabled={false}
+          style={{marginBottom: 50}}
+          renderItem={({item}) => (
+            <TouchableOpacity>
+              <View style={styles.horrorPodcastListContent}>
+                <View style={styles.horrorPodcastListImageContainer}>
+                  <Image
+                    source={{uri: item.image}}
+                    alt={item.title}
+                    style={{height: '100%', width: '100%', borderRadius: 20}}
+                  />
+                </View>
+                <View style={styles.horrorPodcastListDescContainer}>
+                  <View>
+                    <Text style={styles.horrorPodcastListTitle}>
+                      {item.title}
+                    </Text>
+                    <Text style={styles.horrorPodcastListStudio}>
+                      {item.time}
+                    </Text>
+                  </View>
+                  <TouchableOpacity style={styles.playIcon}>
+                    {/* <PlayIcon /> */}
+                    <Ionicons name="heart-outline" size={24} color="black" />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+
+        {/* end__podcast-list */}
+      </View>
+      {/* end__heading-podcast */}
+
+      {/* END__HORROR PODCAST */}
     </ScrollView>
   );
 };
