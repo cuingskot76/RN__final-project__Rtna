@@ -8,6 +8,7 @@ import Notification from '../screens/notification/Notification';
 import Keep from '../screens/keep/Keep';
 import Splash from '../components/Splash';
 import DetailsNotification from '../components/DetailsNotification';
+import Profile2 from '../screens/profile/Profile2';
 
 // Stack = buat navigasi antar screen
 const Stack = createNativeStackNavigator();
@@ -40,7 +41,8 @@ const ButtonTabs = () => {
       <Tab.Screen
         name="Profile"
         options={{headerShown: false}}
-        component={Profile}
+        // component={Profile}
+        component={Profile2}
       />
     </Tab.Navigator>
   );
